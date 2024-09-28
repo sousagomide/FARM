@@ -1,5 +1,7 @@
 # FARM
 
+1) Sobre FastAPI
+
 Instalação do FastAPI
 
 pip install fastapi
@@ -24,3 +26,5 @@ http://127.0.0.1:8000/docs
 Extensões
 
     fastapi-snippets
+
+2) Sobre React
