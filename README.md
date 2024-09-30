@@ -23,8 +23,26 @@ Forma interativa de usar o FastAPI
 
 http://127.0.0.1:8000/docs
 
+2) Sobre React
+
+Instalação do React
+
+npm install create-react-app
+
+Criação de um projeto
+
+npx create-react-app my-app
+
+Executar a aplicação
+
+npm start
+
+
+
+
+
 Extensões
 
     fastapi-snippets
-
-2) Sobre React
+	Live Preview
+	vscode-icons

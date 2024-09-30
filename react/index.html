@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando o React</title>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="teste"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        const divApp = document.querySelector('#app');
+        ReactDOM.render(
+            React.createElement('h1', null, 'Provas de TI'),
+            divApp
+        );
+        const meuElemento = React.createElement('h2', null, 'Tudo para você passar');
+        const divTeste = ReactDOM.createRoot(document.getElementById('teste'));
+        divTeste.render(meuElemento);
+    </script>
+</body>
+</html>
