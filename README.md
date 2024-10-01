@@ -37,8 +37,54 @@ Executar a aplicação
 
 npm start
 
+3) Sobre MongoDB
 
+Instalar MongoDB Community e MongoDB Shell
+Instalar MongoDB Compass
 
+Comandos do MongoDB
+
+=> show dbs;
+
+	Mostra os bancos de dados
+
+=> use <nome>;
+
+	Usa uma nova base de dados
+	
+=> show collections;
+
+	Mostra as coleções da base
+	
+=> db.createCollection('<nome>')
+
+	Cria uma nova coleção
+	
+=> db.<nome>.insertOne({chave: valor})
+
+	Cria um novo registro
+	
+=> db.<nome>.find({})
+
+	Busca todos os registros
+	
+=> db.<nome>.find({chave: valor})
+
+	Busca por um atributo
+
+=> db.<nome>.update({chave: valor}, {$set:{chave: valor}})
+
+	Atualiza um atributo
+	
+=> db.<nome>.deleteOne({chave: valor})
+
+	Delete um registro
+	
+4) Projeto Gerenciamento de Jogadores
+
+- Bibliotecas
+
+pip install pymongo fastapi uvicorn
 
 
 Extensões
