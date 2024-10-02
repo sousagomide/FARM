@@ -86,6 +86,10 @@ Comandos do MongoDB
 
 pip install pymongo fastapi uvicorn
 
+- Bibliotecas no React
+
+npm i axios bootstrap
+
 
 Extensões
 
