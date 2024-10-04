@@ -101,4 +101,4 @@ Extensões
 
 - Bibliotecas
 
-pip install fastapi uvicorn python-decouple beanie pydantic-settings pydantic[email] python-jose[cryptography] "passlib[bcrypt]"
+pip install fastapi uvicorn python-decouple beanie pydantic-settings pydantic[email] python-jose[cryptography] "passlib[bcrypt]" python-multipart
