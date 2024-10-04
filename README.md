@@ -96,3 +96,9 @@ Extensões
     fastapi-snippets
 	Live Preview
 	vscode-icons
+	
+5) Projeto ToDO
+
+- Bibliotecas
+
+pip install fastapi uvicorn python-decouple beanie pydantic-settings
