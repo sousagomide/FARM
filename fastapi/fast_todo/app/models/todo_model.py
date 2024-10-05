@@ -1,5 +1,5 @@
 from typing import Optional
-from datetime import datetime
+from datetime import datetime, timezone
 from uuid import UUID, uuid4
 from beanie import Document, Indexed, Link, before_event, Replace, Insert
 from pydantic import Field
@@ -10,8 +10,8 @@ class Todo(Document):
     status: bool = False
     title: str = Indexed(str)
     description: str = Indexed(str)
-    created_at: datetime = Field(default_factory=lambda:datetime.now(datetime.UTC))
-    updated_at: datetime = Field(default_factory=lambda: datetime.now(datetime.UTC))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(tz=timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(tz=timezone.utc))
     owner: Link[User]
 
     def __repr__(self) -> str:
@@ -31,5 +31,5 @@ class Todo(Document):
     # Atualiza o campo toda vez que houver um Replace ou Insert
     @before_event([Replace, Insert])
     def sync_updated_at(self):
-        self.updated_at = datetime.now(datetime.UTC)
+        self.updated_at = datetime.now(tz=timezone.utc)
             

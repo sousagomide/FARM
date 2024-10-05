@@ -14,7 +14,9 @@ class Settings(BaseSettings):
     # 60 minutes * 24 hours * 7 days = 1 week
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
     REFRESH_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
-    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = []
+    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [
+        'http://localhost:3000'
+    ]
     PROJECT_NAME: str = "TODOFast"
     # Database
     MONGO_CONNECTION_STRING: str = config("MONGO_CONNECTION_STRING", cast=str)

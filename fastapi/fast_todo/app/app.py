@@ -7,11 +7,12 @@ from contextlib import asynccontextmanager
 from models.user_model import User
 from models.todo_model import Todo
 from api.api_v1.router import router
+from fastapi.middleware.cors import CORSMiddleware
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Cria o banco de dados todoapp
-    client_db = AsyncIOMotorClient(settings.MONGO_CONNECTION_STRING).todoapp
+    client_db = AsyncIOMotorClient(settings.MONGO_CONNECTION_STRING, uuidRepresentation="standard").todoapp
     await init_beanie(
         database=client_db,
         document_models=[
@@ -23,6 +24,14 @@ async def lifespan(app: FastAPI):
     client_db.client.close()
 
 app = FastAPI(title=settings.PROJECT_NAME, openapi_url=f"{settings.API_V1_STR}/openapi.json", lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.BACKEND_CORS_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 app.include_router(
     router, prefix=settings.API_V1_STR
