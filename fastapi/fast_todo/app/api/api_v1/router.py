@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from .handlers import user
+from .handlers import user, todo
 from api.auth.jwt import auth_router
 
 
@@ -13,3 +13,6 @@ router.include_router(
     auth_router, prefix="/auth", tags=["auth"]
 )
 
+router.include_router(
+    todo.todo_router, prefix="/todo", tags=["todo"]
+)

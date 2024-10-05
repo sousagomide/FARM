@@ -5,6 +5,7 @@ from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
 from contextlib import asynccontextmanager
 from models.user_model import User
+from models.todo_model import Todo
 from api.api_v1.router import router
 
 @asynccontextmanager
@@ -14,7 +15,8 @@ async def lifespan(app: FastAPI):
     await init_beanie(
         database=client_db,
         document_models=[
-            User
+            User,
+            Todo
         ]
     )
     yield
