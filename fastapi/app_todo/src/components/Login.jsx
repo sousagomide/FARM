@@ -1,6 +1,7 @@
-import { Flex, useColorMode, useColorModeValue, FormControl, Heading, Input, FormErrorMessage, Button } from "@chakra-ui/react";
+import { Flex, useColorModeValue, FormControl, Heading, Input, FormErrorMessage, Button } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { Theme } from "./Theme/Theme";
 
 export const Login = () => {
     const { handleSubmit, register, formState: { errors, isSubmitting } } = useForm();
@@ -39,17 +40,27 @@ export const Login = () => {
                         </FormErrorMessage>
                     </FormControl>
                     <Button
-                        type="submit"
-                        colorScheme="whatsapp"
                         width="100%"
+                        colorScheme="green"
                         variant="outline"
                         mt={6}
                         mb={6}
+                        type="submit"
                         isLoading={isSubmitting}
                         loadingText="Carregando...">
                         Entrar
                     </Button>
                 </form>
+                <Theme showLabel={true}/>
+                <Button 
+                    width="100%"
+                    colorScheme="blue"
+                    variant="outline"
+                    mt={6}
+                    onClick={() => navigate("/cadastro", { replace: true})}
+                >
+                    Cadastre-se
+                </Button>
             </Flex>
         </Flex>
     )
