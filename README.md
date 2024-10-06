@@ -96,9 +96,13 @@ Extensões
     fastapi-snippets
 	Live Preview
 	vscode-icons
+	ES7 + React/Redux/React-Native snippets
 	
 5) Projeto ToDO
 
 - Bibliotecas
 
 pip install fastapi uvicorn python-decouple beanie pydantic-settings pydantic[email] python-jose[cryptography] "passlib[bcrypt]" python-multipart
+
+npm install -g yarn
+yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
