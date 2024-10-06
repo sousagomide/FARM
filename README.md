@@ -107,3 +107,4 @@ pip install fastapi uvicorn python-decouple beanie pydantic-settings pydantic[em
 npm install -g yarn
 yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
 yarn add axios react-router-dom@6 react-hook-form
+yarn add jwt-decode

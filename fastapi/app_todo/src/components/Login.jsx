@@ -1,14 +1,26 @@
-import { Flex, useColorModeValue, FormControl, Heading, Input, FormErrorMessage, Button } from "@chakra-ui/react";
+import { Flex, useColorModeValue, FormControl, Heading, Input, FormErrorMessage, Button, useToast } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Theme } from "./Theme/Theme";
+import { useAuth } from "../hooks/useAuth";
 
 export const Login = () => {
     const { handleSubmit, register, formState: { errors, isSubmitting } } = useForm();
-    const onSubmit = (values) => {
-        console.log(values);
+    const toast = useToast();
+    const onSubmit = async (values) => {
+        try {
+            await login(values.email, values.senha);
+        } catch(error) {
+            toast({
+                title: "Erro ao logar",
+                status: "error",
+                isClosable: true,
+                duration: 1500
+            });
+        }
     }
     const navigate = useNavigate();
+    const { login } = useAuth();
     
     return (
         <Flex height="100vh" alignItems="center" justifyContent="center">
